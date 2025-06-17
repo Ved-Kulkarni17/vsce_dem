@@ -1,0 +1,63 @@
+{
+  "name": "extension-plop",
+  "displayName": "Plop Extension",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc",
+    "plop": "plop",
+    "package": "vsce package"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension-plop.get-unstructured",
+    "onCommand:extension-plop.rephrase-query"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension-plop.get-unstructured",
+        "title": "Get Response"
+      },
+      {
+        "command": "extension-plop.rephrase-query",
+        "title": "Rephrase Question"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+      {
+        "id": "extensionPanel",
+        "title": "TCL2PY",
+        "icon": "assets/icon.png" 
+      }
+      ]
+    },
+    "views": {
+      "extensionPanel": [
+      {
+        "id": "tcl2pyCommands",
+        "name": "Commands"
+      }
+    ]
+    }
+  },
+  "dependencies": {
+    "cookiecutter": "^1.3.0",
+    "hygen": "^6.2.11"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@vscode/vsce": "^3.4.2",
+    "change-case": "^5.4.4",
+    "param-case": "^3.0.4",
+    "plop": "^4.0.1",
+    "typescript": "^5.8.3",
+    "vsce": "^2.15.0"
+  }
+}
